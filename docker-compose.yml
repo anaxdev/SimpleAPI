@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  backend:
+    build: .
+    image: backend
+    environment:
+      - MONGODB_URL=mongodb://mongodb:27017/anaxdb
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongodb
+    networks:
+      - backend-network
+
+  mongodb:
+    image: mongo:4.2.15-bionic
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata:/data/db
+    networks:
+      - backend-network
+
+volumes:
+  dbdata:
+
+networks:
+  backend-network:
+    driver: bridge

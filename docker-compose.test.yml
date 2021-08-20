@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  backend:
+    container_name: backend-test
+    volumes:
+      - .:/usr/src/app
+    command: yarn test
