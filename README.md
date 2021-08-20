@@ -22,7 +22,7 @@ docker-compose build
 Deploy in docker container:
 
 ```bash
-docker-compose build
+docker-compose up -d
 ```
 
 
@@ -89,3 +89,4 @@ List of available api endpoints:
 `PATCH /v1/users/:userId` - update user\
 `DELETE /v1/users/:userId` - delete user
 
+The swagger page can test each api endpoint directly. Or the developer can use Postman tool for api testing.
